@@ -1,0 +1,164 @@
+"context":"https://schema.ixo.foundation/claim:ee9ru-ruprwerweipewfl",
+"@Type":"impactClaim",
+"id":"",
+"templateId":"",
+"templateName":"",
+"version":"",
+"usage":[
+    {"terms":"",
+    "feeId":""}
+],
+"entityId":"did:ixo:8uQhQMGzWxR8vw5P3UWH1ja",
+"claimData":
+{   "context":"schema.ixo.foundation/data:ee9ru-ruprwerweipewfl",
+    "type":"array",
+    "items:
+[
+        "type":"object",
+        "required":[""
+        ],
+        "properties":
+        [
+        {
+            "name": 
+            {
+                "type":"document",
+                "id":"",
+                "title":"",
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 20,
+                "default":"",
+                "examples":[""]
+            }
+        }
+        ],
+    }
+]
+},
+"measures":
+{
+    "type":"array",
+    "items":
+[
+    "context":"https://iris.thegiin.org/metric",
+    "type":"object",
+    "properties":
+    [
+        {
+            "name":"",
+            "id":"https://iris.thegiin.org/metric/5.1/pi2764/",
+            "type":"",
+            "type":"string",
+            "attributeMap":[
+                "":""
+            ]    // could use Json-ld frame?
+        }
+    "required":"[]
+    ] 
+]
+},
+"contextData",
+{
+    "context":"schema.ixo.foundation/data/context:ee9ru-ruprwerweipewfl",
+    "type":"array",
+    "items":
+    [
+        {
+        "@type":"",
+        "id":"",
+        "type":"object",
+        "properties",
+            {
+                "source":{"type":"string"},
+                "persistent":{"type":"boolean"},
+                "userEditable":false,
+                "synchronise":"",
+                "map":[
+                    {"":""}
+                ]
+            },
+        "required":[]
+        }
+    ]
+],
+"security",
+{
+    "context":"schema.ixo.foundation/data/security:ee9ru-ruprwerweipewfl",
+    "type":"array",
+    "items":
+    [
+        {
+        "@type":"",
+        "id":"",
+        "type":"object",
+        "properties",
+            {
+                "deviceID":{"type":"string"},
+                "id":{"type":"string"}
+                "name":{"type":"string"},
+            },
+        "required":[]
+        }
+    ]
+],
+"authorisations":
+{
+    "context":"schema.ixo.foundation/data/auth:ee9ru-ruprwerweipewfl",
+    "type":"array",
+    "items":
+    [
+        {
+        "@type":{"type":"string"},
+        "id":{"type":"string"},
+        "type":"object",
+        "properties",
+            {
+                "role":{"type":"string"},
+                "id":{"type":"string"},
+                "credential":
+                  {
+                      "id":{"type":"string"},
+                      "attribute":{"type":"string"},
+                      "issuer":"{"type":"string"}
+                      },
+                "capability",""
+            },
+        "required":[]
+        }
+    ]
+},
+"meansOfVerification":
+    {
+    "context":"schema.ixo.foundation/data/verification:ee9ru-ruprwerweipewfl",
+    "type":"array",
+    "items":
+    [
+        {
+        "@type":{"type":"string"},
+        "id":{"type":"string"},
+        "type":"object",
+        "properties",
+        [
+            {
+                "type":{"type":"string"},
+                "id":,{"type":"string"},
+                "method":{"type":"string"},
+                "format":{"type":"string"},
+                "validation":{"type":"string"},
+                "threshold":"{"type":"string"},
+                "input":{"type":"string"},
+                "output":{"type":"string"}
+                "test":{"type":"string"}
+                },
+        "required":[]
+],
+"controller":"did:ixo:8uQhQMGzWxR8vw5P3UWH1ja",
+"created": "2002-10-10T17:00:00Z",
+"updated": "2016-10-17T02:41:00Z",
+"proof": {
+    "type": "LinkedDataSignature2015",
+    "created": "2016-02-08T16:02:20Z",
+    "creator": "did:ixo:8uQhQMGzWxR8vw5P3UWH1ja#keys-1",
+    "signatureValue": "QNB13Y7Q9...1tzjn4w=="
+  }  
