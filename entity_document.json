@@ -1,0 +1,372 @@
+{
+ "@context":"https://schema.ixo.foundation/entity:2383r9riuew",
+ "id":"did:ixo:123456789abcdefghi",
+ "@type":"Cell",
+ "name":"",
+ "privacy":
+     {
+         "entityView":"",
+         "pageView":"",
+         "transactionsView":""
+     },
+ "location":"",
+ "startDate":"",
+ "endDate":"",
+ "SDG":[],
+ "autoApprove":[],
+ "relayerNode":"",
+ "owner":
+ {
+     "id":"did:ixo:123456789abcdefghi",
+     "brand":"",
+     "logo":"",
+     "website":"",
+     "verifiableCredential":
+     {"@context":"https://www.w3.org/2018/credentials/v1",
+     "credential":
+        [
+            {
+                "id": "1872",
+                "type": ["read", "update", "deactivate"],
+                "issuer": "did:ixo:345fg0D9314EsdfgdfgdfrBA1633C33fdb8cF365a12",
+                "issuanceDate": "2019-01-01T19:73:24Z",
+                "credentialSubject": {"id": "did:ixo:vke939e93idj28493284932"},
+                "proof":
+                {
+                    "type": "RsaSignature2018",
+                    "created": "2019-01-01T19:73:24Z",
+                    "proofPurpose": "assertionMethod",
+                    "signatureValue": "ABCJSDAO23...1tzjn4w"
+                }
+            }
+        ]
+ }
+ },
+ "pagecontent":
+    {
+      "@id":"ipfs/vfnvsfg08whf0hw0hds90vwdhjpwgnw",
+      "cid":"",
+      "version":""
+    },
+ "templates":
+    {
+        "@context":"schema.ixo.foundation/templates/ipfsr98refuibew"
+     },
+     "items":
+    [
+     {
+         "@Type":"project",
+         "@id":"",
+         "version":"",
+         "cid":""
+     },
+     {
+         "@Type":"claim",
+         "@id":"",
+         "version":"",
+         "cid":""
+     },
+     {
+         "@Type":"form",
+         "@id":"",
+         "version":"",
+         "cid":""
+     },
+     {
+         "@Type":"evaluation",
+         "@id":"",
+         "version":"",
+         "cid":""
+     }
+    ],
+ "claims":
+    {"@context":"https://schema.ixo.world/claims:3r08webu2eou"},
+    "items":[
+     {
+         "@type":"impact",
+         "@id":"",
+         "cid":"",
+         "template":
+         {
+             "@id":"",
+             "cid":""
+         },
+         "description":"",
+         "goal":"",
+         "indicator":[""],
+         "target":"",
+         "visibility":"public",
+         "startDate":"",
+         "endDate":"",
+         "isPublished":"true",
+         "oracle":
+         [
+             {
+                 "id":"",
+                 "credential":"",
+                 "issuer":"",
+                 "capability":"",
+                 "fee":"",
+                 "maxfee":"",
+                 "stake":""
+             }
+             ]
+     },
+     {
+         "@type":"useofFunds",
+         "@id":"",
+         "cid":"",
+         "template":
+         {
+             "@id":"",
+             "cid":""
+         },
+         "description":"",
+         "goal":"",
+         "indicator":"",
+         "target":"",
+         "visibility":"public",
+         "startDate":"",
+         "endDate":"",
+         "isPublished":"true",
+         "oracle":
+         [
+             {
+                 "id":"",
+                 "credential":"",
+                 "issuer":"",
+                 "capability":"",
+                 "fee":"",
+                 "maxfee":"",
+                 "stake":""
+             }
+             ]
+     },
+     {
+         "@type":"banking",
+         "@id":"",
+         "cid":"",
+         "template":
+         {
+             "@id":"",
+             "cid":""
+         },
+         "description":"",
+         "goal":"",
+         "indicator":"",
+         "target":"",
+         "visibility":"public",
+         "startDate":"",
+         "endDate":"",
+         "isPublished":"true",
+         "oracle":
+         [
+             {
+                 "id":"",
+                 "credential":"",
+                 "issuer":"",
+                 "capability":"",
+                 "fee":"",
+                 "maxfee":"",
+                 "stake":""
+             }
+             ]
+      },
+      {
+         "type":"iris+",
+         "id":"",
+         "cid":"",
+         "template":
+         {
+             "@id":"",
+             "cid":""
+         },
+         "description":"",
+         "goal":"",
+         "indicator":"",
+         "target":"",
+         "visibility":"public",
+         "startDate":"",
+         "endDate":"",
+         "isPublished":"true",
+         "oracle":
+         [
+             {
+                 "id":"",
+                 "credential":"",
+                 "issuer":"",
+                 "capability":"",
+                 "fee":"",
+                 "maxfee":"",
+                 "stake":""
+             }
+        ],
+    "associatedEntities":
+    [
+     {
+         "@type":"Bond",
+         "id":"did:ixo:123456789abcdefghi"
+     }
+    ],
+ "fees":
+    {"@context":"https://schema.ixo.world/fees:3r08webu2eou",
+    "items": 
+    [
+     {
+         "@type":"",
+         "id":"",
+         "denom":"ixo",
+         "maxFee":"",
+         "maxQty":""
+     }
+    ],
+ "stake":
+    {"@context":"https://schema.ixo.world/staking:r08webu2eou"},
+    "items":
+    [
+        {
+         "@type":"",
+         "id":"",
+         "slashCondition":"",
+         "denom":"ixo",
+         "stakeAddress":"",
+         "minimumStake":"",
+         "slashFactor":"",
+         "slashAmount":"",
+         "unbondPeriod":""
+        }
+    ],
+ "nodes":
+    {"@context":"https://schema.ixo.world/nodes:3r08webu2eou",
+    "items":
+    [
+        {
+            "type":"cellNode",
+            "name":"",
+            "id":"",
+            "@id":"",
+            "credential":""
+        }
+    ],
+ "ddoTags":
+    [
+        {
+            "category":"",
+            "tags":
+                ["Index","Civic Action","Covid-19","Epidemic Response"]
+        },
+        {
+        "category":"Stage",
+        "tags": ["Delivery"]
+        },
+        {
+        "category":"location",
+        "tags":["global"]
+        }
+    ],
+ "keys":
+        {
+        "@context": "https://www.w3.org/ns/did/v1",
+        "publicKey":
+            [
+            {
+                "id": "did:ixo:123456789abcdefghi#keys-1",
+                "type": "RsaVerificationKey2018",
+                "controller": "did:ixo:123456789abcdefghi",
+                "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+            },
+            {
+                "id": "did:ixo:123456789abcdefghi#keys-3",
+                "type": "Ieee2410VerificationKey2018",
+                "controller": "did:ixo:123456789abcdefghi",
+                "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+            }
+            ],
+        "authentication":
+            [
+                {
+                    "id": "did:ixo:123456789abcdefghi#keys-2",
+                    "type": "Ed25519VerificationKey2018",
+                    "controller": "did:ixo:123456789abcdefghi",
+                    "created": "2020-02-08T08:13:49Z",
+                    "updated": "2020-03-08T08:13:49Z",
+                    "publicKeyBase58": "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
+                }
+            ],
+        "service":
+            [
+                {
+                    "id": "did:ixo:123456789abcdefghi#openid",
+                    "type": "VerifiableCredentialService",
+                    "serviceEndpoint": "https://example.com/vc/"
+                },
+                {
+                    "id": "did:example:123456789abcdefghi#hub",
+                    "type": "IdentityHub",
+                    "publicKey": "did:example:123456789abcdefghi#key-1",
+                    "serviceEndpoint":
+                    {
+                        "@context": "https://schema.identity.foundation/hub",
+                        "type": "UserHubEndpoint",
+                        "instances": ["did:example:456", "did:example:789"]
+                    }
+                },
+                {
+                    "id": "did:example:123456789abcdefghi#messages",
+                    "type": "MessagingService",
+                    "serviceEndpoint": "https://example.com/messages/8377464"
+                },
+                {
+                    "id": "did:example:123456789abcdefghi#inbox",
+                    "type": "SocialWebInboxService",
+                    "serviceEndpoint": "https://social.example.com/83hfh37dj",
+                    "description": "My public social inbox",
+                    "spamCost":
+                    {
+                        "amount": "0.50",
+                        "currency": "USD"
+                    }
+                },
+                {
+                    "id": "did:example:123456789abcdefghi#authpush",
+                    "type": "DidAuthPushModeVersion1",
+                    "serviceEndpoint": "http://auth.example.com/did:example:123456789abcdefg"
+                    }
+                ],
+    "verifiableCredential":
+        {"@context":"https://www.w3.org/2018/credentials/v1"},
+        "credential":
+        [
+            {
+                "id": "1872",
+                "type": ["read", "update", "deactivate"],
+                "issuer": "did:ixo:345fg0D9314EsdfgdfgdfrBA1633C33fdb8cF365a12",
+                "issuanceDate": "2019-01-01T19:73:24Z",
+                "credentialSubject": {"id": "did:ixo:vke939e93idj28493284932"},
+                "proof":
+                {
+                    "type": "RsaSignature2018",
+                    "created": "2019-01-01T19:73:24Z",
+                    "proofPurpose": "assertionMethod",
+                    "signatureValue": "ABCJSDAO23...1tzjn4w=="
+                }
+            }
+        ],
+ "data":
+        [
+            {
+            "id": "did:example:123456789abcdefghi#openid",
+            "type": "Registry",
+             "serviceEndpoint": "ipfs.io/QmXnnyufdzAWL5CqZ2RnSNgPbvCc1ALT73s6epPrRnZ1Xy"
+            }
+        ],
+ "created": "2002-10-10T17:00:00Z",
+ "updated": "2016-10-17T02:41:00Z",
+ "proof":
+    {
+        "type": "LinkedDataSignature2015",
+        "created": "2016-02-08T16:02:20Z",
+        "creator": "did:example:8uQhQMGzWxR8vw5P3UWH1ja#keys-1",
+        "signatureValue": "QNB13Y7Q9...1tzjn4w=="
+    }
+}
