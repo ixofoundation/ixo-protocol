@@ -78,31 +78,47 @@ the DID, after the prefix, is the entity identifier specified below.
 
 ### Basic Concepts
 
-Interracting with a Git repo using the CRUD operations on a Git DID is done
-using a new Git porcelain command called `git did`. The porcelain command is
-called using the following syntax:
+## Privacy Considerations
+
+Since DIDs can be resolved by anyone, care should be taken to ensure the DID
+Document does not contain any sensitive personal information. No personal information must be stored inin the DID document.
+
+## Reference Implementations
+
+## Implementation Notes
+
+
+#### Key-ID
+
+A key-id is the shorthand version of a public key that is calculated from the
+public key bytes itself. A key-id is the Base58 encoding of the SHA-256 digest
+of the public key. This allows for a uniform size naming scheme for DID
+documents that may have public keys of different sizes and of different
+algorithms.
+
+The ABNF of the key-id is as follows:
 
 ```
-$ git did <crud-command> <did> [options]
+key-id = 44*(base58)
+base58 = "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8" / "9" / "A" / "B" /
+         "C" / "D" / "E" / "F" / "G" / "H" / "J" / "K" / "L" / "M" / "N" /
+         "P" / "Q" / "R" / "S" / "T" / "U" / "V" / "W" / "X" / "Y" / "Z" /
+         "a" / "b" / "c" / "d" / "e" / "f" / "g" / "h" / "i" / "j" / "k" /
+         "m" / "n" / "o" / "p" / "q" / "r" / "s" / "t" / "u" / "v" / "w" /
+         "x" / "y" / "z"
 ```
 
-The crud-command is one of the following: `create`, `read`, `update`, and
-`delete`. The operations do different things depending on the DID that is
-passed as the first parameter. There is one special case when the repo DID
-regime is being established that the DID is unknown and therefore omitted. To
-establish the DID regime over a repo run the following command either inside of
-the repository or with the `--repo` option:
-
-```
-$ git did create
-$ git did create --repo=/foo/bar/baz
-```
-
-## CRUD Operations
-
-### Create 
-
-#### Repository DID
+#### Aliases
 
 
-#### Contributor DID
+
+#### Permissions
+
+
+
+### Implementation Details
+
+## Resources
+
+The [Peer DID Method
+Spec](https://dhh1128.github.io/peer-did-method-spec/index.html) is very similar in nature and can be used as a reference point.
