@@ -4,20 +4,21 @@
   "shortDescription": "Some Short Description",
   "imageDescription": "Some Image Description",
   "sdgs": ["5", "7"],
-  "organisation": "Some Organisation",
+  "brand": "Some Brand Indentity",
   "location": "AR",
-  "image": "https://pds_pandora.ixo.world/public/sbujb0xg0dgkeljwtnc"
+  "image": "https://cellnode.ixo.world/public/sbujb0xg0dgkeljwtnc",
+  "logo": "https://cellnode.ixo.world/public/xxxjb0xg0dgkeljwtnc"
  },
  "body": [
   {
    "title": "Some Body Content Title",
    "content": "Some Body Content",
-   "image": "https://pds_pandora.ixo.world/public/n724h8vl04bkeljy6xl"
+   "image": "https://cellnode.ixo.world/public/n724h8vl04bkeljy6xl"
   },
   {
    "title": "Another Body Content Title",
    "content": "Another Body Content",
-   "image": "https://pds_pandora.ixo.world/public/e4g7yisha77keljyz5d"
+   "image": "https://cellnode.ixo.world/public/e4g7yisha77keljyz5d"
   }
  ],
  "images": [
@@ -25,7 +26,7 @@
    "title": "Some Image Content Title",
    "content": "Some Image Body Content",
    "imageDescription": "Some Image Description",
-   "image": "https://pds_pandora.ixo.world/public/7bfhyr0m1p9keljzr4i"
+   "image": "https://cellnode.ixo.world/public/7bfhyr0m1p9keljzr4i"
   }
  ],
  "profiles": [
@@ -34,14 +35,7 @@
    "position": "Some Position 1",
    "linkedInUrl": "https://linkedin1",
    "twitterUrl": "https://twitter1",
-   "image": "https://pds_pandora.ixo.world/public/64tkzqd3llrkelk01rj"
-  },
-  {
-   "name": "Someone 2",
-   "position": "Some Position 2",
-   "linkedInUrl": "https://linkedin2",
-   "twitterUrl": "https://twitter2",
-   "image": "https://pds_pandora.ixo.world/public/o18hu58fj48kelk08c5"
+   "image": "https://cellnode.ixo.world/public/64tkzqd3llrkelk01rj"
   }
  ],
  "social": {
