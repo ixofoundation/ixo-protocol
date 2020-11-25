@@ -142,8 +142,12 @@
  "nodes": {
   "@context": "https://schema.ixo.world/nodes/ipfs3r08webu2eou",
   "items": [
-   { "@type": "IBCNode", "id": "did:ixo:CYCc2xaJKrp8Yt947Nc6jdbb" },
-   { "@type": "CellNode", "id": "did:ixo:CYCc2xaJKrp8Yt947Nc6jdzz" }
+   { "@type": "IBCNode", 
+    "id": "did:ixo:CYCc2xaJKrp8Yt947Nc6jdbb",
+     "serviceEndpoint":"nodeaddress"},
+   { "@type": "CellNode",
+    "id": "did:ixo:CYCc2xaJKrp8Yt947Nc6jdzz",
+     "serviceEndpoint":"https://cellnodeurl.com"}
   ]
  },
  "funding": {
