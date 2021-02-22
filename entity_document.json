@@ -187,8 +187,7 @@
    "serviceEndpoint": "https://hub.me.com",
    "properties": "regex or other string"
   }
- ]
-},
+ ],
  "created": "2002-10-10T17:00:00Z",
  "updated": "2016-10-17T02:41:00Z",
  "proof":
