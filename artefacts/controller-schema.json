@@ -1,0 +1,100 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "controller": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "DID",
+          "examples": [
+            "did:x:CYCc2xaJKrp8Yt947Nc6jd1"
+          ],
+          "description": "DID of the Entity Controller"
+        },
+        "@type": {
+          "type": "string",
+          "default": "ixo:controller",
+          "description": "The type of entity attribute, as defined in the ixo Context library."
+        },
+        "displayName": {
+          "type": "string",
+          "default": "Public Identity",
+          "examples": [
+            "ixo Foundation"
+          ]
+          "description": "Publicly displayed name of the Controller."
+        },
+        "location": {
+          "type": "string",
+          "default": "CH",
+          "examples": [
+            "CH"
+          ],
+          "description": "Country code where the controller is located. Use GLOBAL for creators with multiple locations."
+          "format": "ISO 3166-1 alpha-2",
+          "maxLength": 2,
+          "minLength": 2
+        },
+        "email": {
+          "type": "string",
+          "examples": [
+            "name@email.com"
+          ],
+          "description": "Publicly displayed Email address."
+          "format": "Email"
+        },
+        "website": {
+          "type": "string",
+          "examples": [
+            "https://website.com"
+          ],
+          "format": "URI",
+          "description": "Publicly displayed website link."
+        },
+        "mission": {
+          "type": "string",
+          "examples": [
+            "This is our mission."
+          ],
+          "maxLength": 128,
+          "description": "Tagline defining the mission of the organisation"
+        },
+        "credential": {
+          "type": "string",
+          "format": "CID",
+          "description": "Content Address linking to the Verifiable Presentation for a Verifiable Credential ",
+          "examples": [
+            "bafybeiczgekrajpsnupayulad7nxepm6xtxhu3hwh4yp4h4zgnj3sefkpy"
+          ]
+        },
+        "logo": {
+          "type": "string",
+          "examples": [
+            "https://cellnode.ixo.world/public/8520qk1ckqvkelkjfeg"
+          ],
+          "format": "URI linking to an image file",
+          "description": "Logo or avatar of the Controller"
+        }
+      },
+      "required": [
+        "id",
+        "@type",
+        "displayName",
+        "location",
+        "email",
+        "website",
+        "mission",
+        "logo"
+      ],
+      "description": "Profile of an Organisation or Person"
+    }
+  },
+  "required": [
+    "controller"
+  ],
+  "additionalProperties": false
+ }
+}
