@@ -1,0 +1,148 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "default": "https:w3id.org/ixo/ns/entities/",  
+          "examples": [
+          "https:w3id.org/ixo/ns/entities#Impact_Token"
+          ]
+        },
+        "@type": {
+          "type": "string",
+          "examples": [
+          "Impact Token"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "default": "Entity Name",
+          "examples": [
+            "Awesome Impact Asset"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "default": "Short description of the Entity",
+          "examples": [
+            "This asset "
+          ]
+        },
+        "image": {
+          "type": "string",
+          "default": "https://web3.storage/",
+          "examples": [
+            "https://cellnode.ixo.world/public/sbujb0xg0dgkeljwtnc"
+          ]
+        },
+        "imageDescription": {
+          "type": "string",
+          "default": "Hero Image",
+          "examples": [
+            "Profile Header Image"
+          ]
+        },
+        "logo": {
+          "type": "string",
+          "default": "",
+          "examples": [
+            "https://cellnode.ixo.world/public/xxxjb0xg0dgkeljwtnc"
+          ]
+        },
+        "brand": {
+          "type": "string",
+          "default": "Organisation",
+          "examples": [
+            "ixo Foundation"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "default": "GLOBAL",
+          "examples": [
+            "AR"
+          ]
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "examples": [
+                  "Model"
+                ]
+              },
+             "value": {
+                "type": "string",
+                "examples": [
+                  "ABC123"
+                ]
+              },
+            },
+            "required": [
+              "key",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "prefix": {
+                "type": "string"
+              },
+              "metric": {
+                "type": "string"
+              },
+              "suffix": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string",
+                "default": "www.example.com",
+                "examples": [
+                  "www.example.com"
+                ]
+              }
+            },
+            "required": [
+              "prefix",
+              "metric",
+              "suffix",
+              "source"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "@type",
+        "name",
+        "description",
+        "image",
+        "imageDescription",
+        "logo",
+        "brand",
+        "location",
+        "attributes",
+        "metrics"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "profile"
+  ],
+  "additionalProperties": false
+}
