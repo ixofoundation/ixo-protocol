@@ -1,0 +1,120 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Claims": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Decentralised Identifier of the entity for which the Claims will be made",
+          "format": "DID",
+          "examples": [
+            "did:ixo:CYCc2xaJKrp8Yt947Nc6jdff"
+          ]
+        },
+        "@type": {
+          "type": "string",
+          "default": "ixo:claims",
+          "examples": [
+            "ixo:claims"
+          ],
+          "description": "The type of entity attribute. As defined in the ixo Context library."
+        },
+        "claim": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "protocol": {
+                "type": "string",
+                "examples": [
+                  "did:ixo:CYCc2xaJKrp8Yt947Nc6jd1"
+                ],
+                "format": "DID",
+                "description": "Decentralised Identifier of the Claim Template Protocol"
+              },
+              "title": {
+                "type": "string",
+                "default": "Claim Title",
+                "examples": [
+                  "This is a Claim Title"
+                ],
+                "maxLength": 128,
+                "description": "Title to be displayed for the claim"
+              },
+              "goal": {
+                "type": "string",
+                "examples": [
+                  "Service Events"
+                ],
+                "description": "Descriptor of what will be counted",
+                "maxLength": 128
+              },
+              "description": {
+                "type": "string",
+                "examples": [
+                  "The number of qualified service events delivered to clients"
+                ],
+                "maxLength": 128,
+                "description": "A short description of what the Claim is measuring"
+              },
+              "targetMin": {
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "description": "Minimum target for the number of claims to be made (nul if there is no limit)"
+              },
+              "targetMax": {
+                "type": "integer",
+                "examples": [
+                  100
+                ],
+                "description": "Minimum target for the number of claims to be made (nul if there is no limit)"
+              },
+              "startDate": {
+                "type": "string",
+                "examples": [
+                  "2020-09-25T00:00:00.000Z"
+                ],
+                "format": "date-time",
+                "description": "Start date of the period during which claims can be made"
+              },
+              "endDate": {
+                "type": "string",
+                "examples": [
+                  "2020-10-22T00:00:00.000Z"
+                ],
+                "format": "date-time",
+                "description": "End date of the period during which claims can be made"
+              }
+            },
+            "required": [
+              "protocol",
+              "title",
+              "goal",
+              "description",
+              "targetMin",
+              "targetMax",
+              "startDate",
+              "endDate"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "@type",
+        "claim"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "Claims"
+  ],
+  "additionalProperties": false
+}
