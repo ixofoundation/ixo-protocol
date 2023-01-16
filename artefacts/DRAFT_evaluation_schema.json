@@ -1,0 +1,212 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "DID",
+          "description": "Decentralised Identifier of the Protocol Entity",
+          "examples": [
+            "did:ixo:CYCc2xaJKrp8Yt947Nc6jdff"
+          ],
+          "title": "Protocol ID"
+        },
+        "claimEvaluation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "default": "Evaluation Methodology",
+                "description": "The type of entity attribute. As defined in the ixo Context library",
+                "title": "Evaluation Methodology",
+                "examples": [
+                  "Name of the Evaluation"
+                ]
+              },
+              "@id": {
+                "type": "string",
+                "default": "ixo:claims#methodology",
+                "examples": [
+                  "ixo:claims#methodology"
+                ],
+                "description": "URI of the Library definition for the Context Type",
+                "title": "Context"
+              },
+              "methodology": {
+                "type": "string",
+                "default": "methodology description",
+                "examples": [
+                  "This is the methodology for evaluating the claim"
+                ],
+                "description": "Description of the Claim Evaluation Methodology that may include links to further documentation",
+                "title": "Methodology"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "A Claim Attribute Key",
+                  "examples": [
+                    "rating"
+                  ]
+                },
+                "description": "Attributes of the Claim that will be evaluated using this methodology",
+                "examples": []
+              }
+            },
+            "required": [
+              "type",
+              "@id",
+              "methodology",
+              "attributes"
+            ],
+            "additionalProperties": false,
+            "description": "Evaluation components",
+            "maxProperties": 1
+          },
+          "description": "How the claim will be evaluated"
+        },
+        "claimApproval": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "examples": [
+                  "approval_criteria"
+                ]
+              },
+              "@id": {
+                "type": "string",
+                "default": "ixo:claims#approval",
+                "examples": [
+                  "ixo:claims#approval"
+                ]
+              },
+              "criteria": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "condition": {
+                      "type": "string",
+                      "examples": [
+                        ">7/10"
+                      ],
+                      "description": "Condition that must be met for the claim to be approved",
+                      "title": "Condition"
+                    },
+                    "attribute": {
+                      "type": "string",
+                      "examples": [
+                        "criteria1"
+                      ],
+                      "title": "Attribute",
+                      "description": "Attribute to which the condition applies"
+                    }
+                  },
+                  "required": [
+                    "condition",
+                    "attribute"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "@id",
+              "criteria"
+            ],
+            "additionalProperties": false,
+            "description": "Criteria for each Attribute",
+            "examples": [
+              "> 100"
+            ],
+            "title": "Criteria"
+          },
+          "description": "Criteria for approving the claim",
+          "uniqueItems": true,
+          "title": "Approval"
+        },
+        "claimEnrichment": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@type": {
+                "type": "string",
+                "examples": [
+                  "claim_enrichment"
+                ],
+                "description": "URI of the Library definition for the Context Type",
+                "format": "Type"
+              },
+              "@id": {
+                "type": "string",
+                "default": "ixo:claims#enrichment",
+                "examples": [
+                  "ixo:claims#enrichment"
+                ],
+                "format": "URI"
+              },
+              "resources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "productId": {
+                      "type": "string",
+                      "default": "productId1",
+                      "examples": [
+                        "productId1"
+                      ]
+                    },
+                    "resource": {
+                      "type": "string",
+                      "default": "resource description",
+                      "examples": [
+                        "resource description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "productId",
+                    "resource"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "@type",
+              "@id",
+              "resources"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Methodology for enriching a Claiclaim"
+        }
+      },
+      "required": [
+        "id",
+        "claimEvaluation",
+        "claimApproval"
+      ],
+      "additionalProperties": false,
+      "title": "Claim Evaluation",
+      "description": "Protocol for Evaluating a Claim"
+    }
+  },
+  "required": [
+    "evaluation"
+  ],
+  "additionalProperties": false
+}
