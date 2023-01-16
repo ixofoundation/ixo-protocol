@@ -1,0 +1,100 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "creator": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "DID",
+          "examples": [
+            "did:x:CYCc2xaJKrp8Yt947Nc6jd1"
+          ],
+          "description": "DID of the Creator"
+        },
+        "@type": {
+          "type": "string",
+          "default": "ixo:creator",
+          "description": "The type of entity attribute. As defined in the ixo Context library."
+        },
+        "displayName": {
+          "type": "string",
+          "default": "Public Identity",
+          "examples": [
+            "ixo Foundation"
+          ]
+          "description": "Publicly displayed name of the Creator."
+        },
+        "location": {
+          "type": "string",
+          "default": "CH",
+          "examples": [
+            "CH"
+          ],
+          "description": "Country code where the creator is located. Use GLOBAL for creators with multiple locations."
+          "format": "ISO 3166-1 alpha-2",
+          "maxLength": 2,
+          "minLength": 2
+        },
+        "email": {
+          "type": "string",
+          "examples": [
+            "name@email.com"
+          ],
+          "description": "Publicly displayed Email address."
+          "format": "Email"
+        },
+        "website": {
+          "type": "string",
+          "examples": [
+            "https://website.com"
+          ],
+          "format": "URI",
+          "description": "Publicly displayed website link."
+        },
+        "mission": {
+          "type": "string",
+          "examples": [
+            "This is our mission."
+          ],
+          "maxLength": 128,
+          "description": "Tagline defining the mission of the organisation"
+        },
+        "credential": {
+          "type": "string",
+          "format": "CID",
+          "description": "Content Address linking to the Verifiable Presentation of a Verifiable Credential ",
+          "examples": [
+            "bafybeiczgekrajpsnupayulad7nxepm6xtxhu3hwh4yp4h4zgnj3sefkpy"
+          ]
+        },
+        "logo": {
+          "type": "string",
+          "examples": [
+            "https://cellnode.ixo.world/public/8520qk1ckqvkelkjfeg"
+          ],
+          "format": "URI linking to an image file",
+          "description": "Logo or avatar of the Creator"
+        }
+      },
+      "required": [
+        "id",
+        "@type",
+        "displayName",
+        "location",
+        "email",
+        "website",
+        "mission",
+        "logo"
+      ],
+      "description": "Profile of an Organisation or Person"
+    }
+  },
+  "required": [
+    "creator"
+  ],
+  "additionalProperties": false
+ }
+}
