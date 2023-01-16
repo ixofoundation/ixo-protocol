@@ -1,0 +1,73 @@
+{
+  "$id": "root",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string",
+          "format": "DID",
+          "description": "Decentralised Identifier of the Entity to which the tags apply",
+          "examples": [
+            "did:ixo:CYCc2xaJKrp8Yt947Nc6jdqq"
+          ]
+        },
+        "@type": {
+          "type": "string",
+          "default": "ixo:tags",
+          "examples": [
+            "ixo:tags"
+          ],
+          "description": "The type of entity attribute. As defined in the ixo Context library."
+        },
+        "ddotags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string",
+                "examples": [
+                  "Project Type"
+                ],
+                "description": "Filter category, as defined in settings"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "examples": [
+                    "Survey"
+                  ],
+                },
+                "description": "Tags, as defined in Settings",
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "category",
+              "tags"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Array of filter categories and tags",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "@id",
+        "@type",
+        "ddotags"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "tags"
+  ],
+  "additionalProperties": false,
+  "title": "Tags",
+  "description": "Entity Tags"
+}
