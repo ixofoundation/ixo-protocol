@@ -46,8 +46,43 @@
               },
               "data": {
                 "type": "object",
-                "description": "Content data",
-                "examples": [{ "text": "Hello World!" }]
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "the content identifier (cid) of the resource",
+                    "examples": ["#fwefw0wu5cv3r"]
+                  },
+                  "description": {
+                    "type": "string",
+                    "examples": ["IoT Events Data"]
+                  },
+                  "mediaType": {
+                    "type": "string",
+                    "examples": ["json"]
+                  },
+                  "endpoint": {
+                    "type": "string",
+                    "examples": ["#cellnode/fwefw0wu5cv3r"]
+                  },
+                  "proof": {
+                    "type": "string",
+                    "description": "matches the cid in this instance, as the content hash serves as a proof",
+                    "examples": ["fwefw0wu5cv3r"]
+                  },
+                  "encrypted": {
+                    "type": "boolean",
+                    "examples": ["false"]
+                  }
+                },
+                "required": [
+                  "id",
+                  "description",
+                  "mediaType",
+                  "endpoint",
+                  "proof",
+                  "encrypted"
+                ],
+                "additionalProperties": false
               }
             },
             "required": ["id", "type", "data"],
