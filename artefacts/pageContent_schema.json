@@ -9,8 +9,8 @@
         "id": {
           "type": "string",
           "description": "Decentralised Identifier of the entity for which the PageContent will be made",
-          "format": "DID",
-          "examples": ["did:ixo:CYCc2xaJKrp8Yt947Nc6jdff"]
+          "format": "uri",
+          "examples": ["did:ixo:entity:CYCc2xaJKrp8Yt947Nc6jdff"]
         },
         "@type": {
           "type": "string",
@@ -50,7 +50,7 @@
                   "id": {
                     "type": "string",
                     "description": "the content identifier (cid) of the resource",
-                    "examples": ["#fwefw0wu5cv3r"]
+                    "examples": ["did:ixo:entity:fwefw0wu5cv3r..."]
                   },
                   "description": {
                     "type": "string",
@@ -58,7 +58,7 @@
                   },
                   "mediaType": {
                     "type": "string",
-                    "examples": ["json"]
+                    "examples": ["jsonld"]
                   },
                   "endpoint": {
                     "type": "string",
