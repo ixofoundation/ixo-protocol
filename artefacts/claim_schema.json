@@ -30,7 +30,7 @@
               "protocol": {
                 "type": "string",
                 "examples": [
-                  "did:ixo:CYCc2xaJKrp8Yt947Nc6jd1"
+                  "did:ixo:entity:CYCc2xaJKrp8Yt947Nc6jd1"
                 ],
                 "format": "uri",
                 "description": "Decentralised Identifier of the Claim Template Protocol"
