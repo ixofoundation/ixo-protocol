@@ -30,9 +30,9 @@
               "protocol": {
                 "type": "string",
                 "examples": [
-                  "did:ixo:CYCc2xaJKrp8Yt947Nc6jd1"
+                  "did:ixo:entity:CYCc2xaJKrp8Yt947Nc6jd1"
                 ],
-                "format": "DID",
+                "format": "uri",
                 "description": "Decentralised Identifier of the Claim Template Protocol"
               },
               "title": {
@@ -49,30 +49,28 @@
                 "examples": [
                   "Service Events"
                 ],
-                "description": "Descriptor of what will be counted",
-                "maxLength": 128
+                "description": "Descriptor of what will be counted"
               },
               "description": {
                 "type": "string",
                 "examples": [
                   "The number of qualified service events delivered to clients"
                 ],
-                "maxLength": 128,
                 "description": "A short description of what the Claim is measuring"
               },
-              "targetMin": {
+              "minimum": {
                 "type": "integer",
                 "examples": [
                   1
                 ],
                 "description": "Minimum target for the number of claims to be made (nul if there is no limit)"
               },
-              "targetMax": {
+              "maximum": {
                 "type": "integer",
                 "examples": [
                   100
                 ],
-                "description": "Minimum target for the number of claims to be made (nul if there is no limit)"
+                "description": "Maximum target for the number of claims to be made (nul if there is no limit)"
               },
               "startDate": {
                 "type": "string",
@@ -96,8 +94,8 @@
               "title",
               "goal",
               "description",
-              "targetMin",
-              "targetMax",
+              "minimum",
+              "maximum",
               "startDate",
               "endDate"
             ],
