@@ -1,0 +1,10 @@
+{
+  "@type": "ixo:creator",
+  "displayName": "Test DAO Owner1",
+  "location": "AL",
+  "email": "df@dfd",
+  "mission": "Mission",
+  "website": "https://11.dcom",
+  "logo": "https://cellnode-pandora.ixo.earth/public/780ex70isbldemg9r8",
+  "id": "did:ixo:entity:asdf1234"
+}

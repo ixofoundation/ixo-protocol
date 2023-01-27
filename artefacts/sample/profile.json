@@ -1,0 +1,28 @@
+{
+  "id": "",
+  "@type": "Carbon",
+  "name": "Mallawi Collection",
+  "description": "asdfasdfasdf",
+  "image": "https://cellnode-pandora.ixo.earth/public/5kg1ca5qc5cldemg07p",
+  "logo": "https://cellnode-pandora.ixo.earth/public/780ex70isbldemg9r8",
+  "brand": "BE",
+  "location": "SA",
+  "attributes": [
+    {
+      "key": "location",
+      "value": "Mallawi"
+    },
+    {
+      "key": "color",
+      "value": "red"
+    }
+  ],
+  "metrics": [
+    {
+      "prefix": "prefix",
+      "metric": "metric",
+      "suffix": "suffix",
+      "source": "https://cellnode.com/#dfdfcv"
+    }
+  ]
+}
