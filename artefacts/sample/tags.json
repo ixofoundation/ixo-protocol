@@ -1,22 +1,17 @@
-[
-  {
-    "category": "Asset Type",
-    "tags": ["Equity", "Commercial Rights"]
+{
+  "@context":{
+    "ixo":"https://w3id.org/ixo/",
+    "id": "@id",
+    "type": "@type",
+    "@protected": true
   },
-  {
-    "category": "Token Class",
-    "tags": ["Ownership Certificate", "Unspecified"]
-  },
-  {
-    "category": "Market",
-    "tags": ["Not Specified", "Asset Registry"]
-  },
-  {
-    "category": "Stage",
-    "tags": ["Selection", "Ended"]
-  },
-  {
-    "category": "SDG",
-    "tags": ["SDG15 – Life on Land", "SDG14 – Life Below Water"]
-  }
-]
+  "id": "did:ixo:entity:abc123",
+  "type": "ixo:entity#tags",
+  "ddoTags":
+  [
+    {
+      "category": "Asset Type",
+      "tags": ["Equity", "Commercial Rights"]
+    }
+  ]
+}
