@@ -1,32 +1,25 @@
 {
-  "5dcad730-8993-4453-9f35-055a1919262d": {
-    "id": "5dcad730-8993-4453-9f35-055a1919262d",
-    "isHeadlineMetric": false,
-    "template": {
-      "title": "Test Claim Title",
-      "description": "Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada.",
-      "creator": "Gregory",
-      "createdAt": "22-Sept-2022",
-      "id": "claim-select00"
-    },
-    "maxSubmissions": "1",
-    "approvalTarget": "1",
-    "submissionStartDate": "20-Jan-2023",
-    "submissionEndDate": "22-Feb-2023"
+  "@context":{
+    "ixo":"https://w3id.org/ixo/",
+    "id": "@id",
+    "type": "@type",
+    "@protected": true
   },
-  "2fad881b-c924-4677-9482-de1fbc79b1c3": {
-    "id": "2fad881b-c924-4677-9482-de1fbc79b1c3",
-    "isHeadlineMetric": true,
-    "template": {
-      "title": "Test Claim Title",
-      "description": "Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada.",
-      "creator": "Gregory",
-      "createdAt": "22-Sept-2022",
-      "id": "claim-select12"
-    },
-    "maxSubmissions": "1",
-    "approvalTarget": "1",
-    "submissionStartDate": "07-Feb-2023",
-    "submissionEndDate": "25-Feb-2023"
+  "id": "did:ixo:entity:123abc",
+  "type": "ixo:entity#claims",
+  "entityClaims":[
+    {
+      "template": {
+        "id":"did:ixo:entity:abc123",
+        "title": "Claim Title",
+        "description": "This is a description of the Claim."
+      },
+      "submissions":{
+        "maximum": 100,
+        "startDate":"20-Jan-2023",
+        "endDate":"22-Feb-2023"
+      }
+    }
+    ],
+   "headlineMetric":"did:ixo:entity:abc123",
   }
-}
