@@ -1,10 +1,16 @@
 {
-  "@type": "ixo:creator",
-  "displayName": "Test DAO Owner1",
+  "@context":{
+    "ixo":"https://w3id.org/ixo/",
+    "id": "@id",
+    "type": "@type",
+    "@protected": true
+  },
+  "id": "did:ixo:entity:asdf1234",
+  "type": "ixo:protocol/entity#creator",
+  "displayName": "Creator Display Name",
   "location": "AA",
-  "email": "asdf@asdf.com",
-  "mission": "Mission",
-  "website": "https://11.dcom",
-  "logo": "https://cellnode-pandora.ixo.earth/public/780ex70isbldemg9r8",
-  "id": "did:ixo:entity:asdf1234"
+  "email": "creator@email.com",
+  "mission": "Mission statement",
+  "website": "https://website.com",
+  "logo": "https://cellnode.storage/public/780ex70isbldemg9r8",
 }
