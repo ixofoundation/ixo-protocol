@@ -1,28 +1,30 @@
 {
-  "id": "",
-  "@type": "Carbon",
-  "name": "Mallawi Collection",
-  "description": "asdfasdfasdf",
-  "image": "https://cellnode-pandora.ixo.earth/public/5kg1ca5qc5cldemg07p",
-  "logo": "https://cellnode-pandora.ixo.earth/public/780ex70isbldemg9r8",
-  "brand": "BE",
+  "@context":{
+    "ixo":"https://w3id.org/ixo/",
+    "id": "@id",
+    "type": "@type",
+    "@protected": true
+  },
+  "id": "did:ixo:entity:abc123",
+  "type": "ixo:entity#profile",
+  "name": "Entity Name",
+  "image": "https://cellnode.storage/public/5kg1ca5qc5cldemg07p",
+  "logo": "https://cellnode.storage/public/780ex70isbldemg9r8",
+  "brand": "Brand behind the entity",
   "location": "SA",
+  "description": "A short profile description of the entity",
   "attributes": [
     {
-      "key": "location",
-      "value": "Mallawi"
-    },
-    {
-      "key": "color",
-      "value": "red"
+      "key": "Model",
+      "value": "Supamoto"
     }
   ],
   "metrics": [
     {
-      "prefix": "prefix",
-      "metric": "metric",
-      "suffix": "suffix",
-      "source": "https://cellnode.com/#dfdfcv"
+      "prefix": "USD",
+      "metric": "Price",
+      "suffix": "average",
+      "source": "https://example.com/dfdfcv"
     }
   ]
 }
