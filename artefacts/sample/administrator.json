@@ -1,0 +1,16 @@
+{
+  "@context":{
+    "ixo":"https://w3id.org/ixo/",
+    "id": "@id",
+    "type": "@type",
+    "@protected": true
+  },
+  "id": "did:ixo:entity:asdf1234",
+  "type": "ixo:protocol/entity#administrator",
+  "displayName": "Admin Display Name",
+  "location": "AA",
+  "email": "admin@email.com",
+  "mission": "Mission statement",
+  "website": "https://website.com",
+  "logo": "https://cellnode.storage/public/780ex70isbldemg9r8",
+} 
