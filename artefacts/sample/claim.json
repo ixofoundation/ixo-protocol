@@ -1,7 +1,7 @@
 {
   "@context":{
     "ixo":"https://w3id.org/ixo/",
-    "id": "@id",
+    "@id": "@type",
     "type": "@type",
     "@protected": true
   },
