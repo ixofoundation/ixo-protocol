@@ -1,11 +1,10 @@
 {
   "@context":{
-    "ixo":"https://w3id.org/ixo/",
-    "id": "@id",
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
+    "@id": "@type",
     "type": "@type",
     "@protected": true
   },
-  "id": "did:ixo:entity:abc123",
   "type": "ixo:entity#tags",
   "ddoTags":
   [
