@@ -5,8 +5,7 @@
     "type": "@type",
     "@protected": true
   },
-  "id": "did:ixo:entity:123abc",
-  "type": "ixo:entity#claims",
+  "type": "ixo:entity#claim",
   "entityClaims":[
     {
       "template": {
