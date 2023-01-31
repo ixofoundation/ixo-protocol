@@ -1,12 +1,12 @@
 {
   "@context":{
     "ixo":"https://w3id.org/ixo/ns/protocol/",
-    "@id": "@type",
+    "@id": "id",
     "type": "@type",
     "@protected": true
   },
   "id": "did:ixo:entity:asdf1234",
-  "type": "ixo:protocol/entity#administrator",
+  "type": "ixo:entity#administrator",
   "displayName": "Admin Display Name",
   "location": "AA",
   "email": "admin@email.com",
