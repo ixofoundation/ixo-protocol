@@ -1,6 +1,6 @@
 {
   "@context":{
-    "ixo":"https://w3id.org/ixo/ns/",
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
     "@id": "@type",
     "type": "@type",
     "@protected": true
