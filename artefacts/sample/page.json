@@ -1,4 +1,13 @@
 {
+  "@context":{
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
+    "@id": "@type",
+    "type": "@type",
+    "@protected": true
+  },
+  "type": "ixo:entity#page",
+  "page":{
+{
   "IrCcJ8hl8t": {
     "id": "IrCcJ8hl8t",
     "type": "paragraph",
@@ -6,4 +15,5 @@
       "text": "Hello"
     }
   }
+}
 }
