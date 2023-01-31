@@ -1,11 +1,10 @@
 {
   "@context":{
-    "ixo":"https://w3id.org/ixo/",
-    "id": "@id",
+    "ixo":"https://w3id.org/ixo/ns/",
+    "@id": "@type",
     "type": "@type",
     "@protected": true
   },
-  "id": "did:ixo:entity:abc123",
   "type": "ixo:entity#profile",
   "name": "Entity Name",
   "image": "https://cellnode.storage/public/5kg1ca5qc5cldemg07p",
