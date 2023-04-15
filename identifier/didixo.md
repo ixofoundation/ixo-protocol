@@ -1,14 +1,5 @@
 # ixo DID Method Specification
 
-*Contributors in alphabetical order:*
-* 
-
-*Participate:*
-* [File a bug]
-* [Commit history]
-* [Pull requests]
-* [Discussion list]
-
 ## About
 This [DID method spec](https://w3c-ccg.github.io/did-spec/#specific-did-method-schemes)
 conforms to the requirements in the DID specification currently published by
@@ -49,70 +40,33 @@ The ixo blockchain provides services that Entities may use to finance their acti
 The services of almost any other public blockchain network may also be accessed by entities, using the ixo blockchain.
 The DID Document for an Entity provides a decentralised record of the entity's ownership, control, services, linked resources, accorded rights, linked entities, and linked claims. This provides an extremely powerful framework for coordination, digital financing, and verification using the Internet of Impact.
 
-## Motivation
-
-### Recording verifiable claims about the state of the world
-
-### Resolving data across multiple systems
-
-### Chains of attribution
-
-
 ## Terminology
 
-### Decentralize Identifier (DID)
+### Decentralized Identifier (DID)
 
 As described in the [Decentralized identifiers (DIDs)
 specification](https://w3c-ccg.github.io/did-spec/), a DID is defined as
 consisting of three parts:
 
-1. The URL scheme identifier: "did".
-2. The DID method identifier. In this case "ixo".
+1. The URL scheme identifier: `did`.
+2. The DID method identifier.
 3. The DID method-specific identifiers.
-
-### Content ID
-
-
-### Key ID
-
-A key ID is the [Base58](https://en.wikipedia.org/wiki/Base58)-encoded,
-[SHA-256](https://en.wikipedia.org/wiki/SHA-2) digest of an entity's
-public key, which is stored in their DID document on an ixo blockchain ledger.
 
 ## ixo DID Method
 
-The namestring that identifies this DID method is `:ixo`.
+The namestring that identifies this DID method is `ixo`.
 
 A DID that uses this method MUST begin with the following prefix: `did:ixo`.
 In accordance with the DID specification, this string MUST be in lowercase. The remainder of
-the DID, after the prefix, is the entity identifier specified below.
+the DID, after the prefix, is the ixo method-specific identifier, that has two parts:
+1. The blockchain **module identifier**, such as `entity`
+2. The cryptographic **key identifier**
 
-### Entity Identifier
+### Key Identifier
 
-
-### JSON-LD Context Definition
-
-### Core Data Model
-
-### Basic Concepts
-
-## Privacy Considerations
-
-Since DIDs can be resolved by anyone, care should be taken to ensure the DID
-Document does not contain any sensitive personal information. No personal information must be stored inin the DID document.
-
-## Reference Implementations
-
-## Implementation Notes
-
-
-#### Key-ID
-
-A key-id is the shorthand version of a public key that is calculated from the
-public key bytes itself. A key-id is the Base58 encoding of the SHA-256 digest
-of the public key. This allows for a uniform size naming scheme for DID
-documents that may have public keys of different sizes and of different
-algorithms.
+The key Identifier is the [Base58](https://en.wikipedia.org/wiki/Base58)-encoded,
+[SHA-256](https://en.wikipedia.org/wiki/SHA-2) digest of an entity's
+public key, which is stored in their DID document on any ixo protocol blockchain ledger.
 
 The ABNF of the key-id is as follows:
 
@@ -126,42 +80,6 @@ base58 = "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8" / "9" / "A" / "B" /
          "x" / "y" / "z"
 ```
 
-#### Aliases
-
-
-
-#### Permissions
-
-
-
-### Implementation Details
-
-## Resources
-
-# Abstract
-
-
-Introduction
-============
-
-Decentralized Identifiers (DIDs) are a new Web standard for secure identifiers without dependency on a trusted third party. DIDs are used to reference ANY subject, including people, organizations, physical locations, and digital assets.
-
-IIDs define a family of DID methods used tolocate on-chain assets and their associated resourcess, allowing the asset to be addressed and used across namespaces: from the web, from another chain, or from any DID compliant wallet or application.
-
-IID Methods are the secret to customizing DIDs to meet the need for secure interactions with any on-chain assets.
-
-## Built on URIs
-IIDs build on a foundation of Internet identifiers, dating back to Uniform Resource Locators and Uniform Resource Identifiers [[2]](#ref2), which are the
-foundation of the World Wide Web. 
-
-URIs allow for different mechanisms to be used for interpreting and applying the syntax of the identifier. 
-
-For example, the URL ```http://example.com``` specifies a web-based resource that can be retrieved using the hypertext transfer protocol (http).
-
-Whereas the URL ```mailto:joe@example.com``` specifies a resource that can receive email messages using the SMTP protocol.
-
-Decentralized Identifiers (DIDs) build on URIs and URLs to provide a new class of URIs which afford secure interaction with the controller of that identifier, without reliance on a
-trusted third-party.
 
 ## DID and IID Documents
 
@@ -178,9 +96,7 @@ A standard format DID Document object defines these **verification relationships
 DID-URLs extend the base DID syntax to support ```/path```, ```?query```, and ```#fragment``` parts. 
 IIDs use the ```/path``` and ```#fragment``` parts of URLs for IID References and IID Resources.
 
-The relationship between IIDs and DIDs is further described in the [IIDs as DIDs](#IIDs-as-DIDs) section.
-
-### ixo Entities
+## ixo Entities
 Entities recorded in the ixo DID registry are identified with the prefix `did:ixo:entity:` 
 These entities are:
 1. Unique within the ixo namespace.
@@ -194,6 +110,12 @@ These entities are:
 9. May have one or more Entity Account/s that hold digital assets owned by the entity, which get carried with the entity if the entity is transferred to a new owner.
 10. May be transferred to a new owner, with verifiable provenance and chain-of-custody, including across registry systems. 
 
+## JSON-LD Context Definition
+{To Do}
+
+## Core Data Model
+{To Do}
+
 ## Linked Resources
 
 The `linkedResource` property provides a privacy-enabled way to attach
@@ -203,6 +125,22 @@ This property provides the metadata required for
 accessing and using the specified resource, such as: the type of resource, a proof to
 verify the resource, and a service endpoint for requesting and retrieving the
 resource.
+
+## Basic Concepts
+{To Do}
+
+## Privacy Considerations
+
+Since DIDs can be resolved by anyone, care should be taken to ensure the DID Document does not contain any sensitive personal information. No personal information must be stored inin the DID document.
+
+{To Do}
+
+## Reference Implementations
+{To Do}
+
+## Implementation Notes
+{To Do}
+
 
 
 Syntax 
@@ -239,7 +177,6 @@ fragment    = *( pchar / "/" / "?" )
 
 pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
 ```
-
 
 Verification Methods may be any cryptographic algorithm, including
 ed25519, secp256k, and blockchain accounts.
