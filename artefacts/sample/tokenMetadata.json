@@ -1,0 +1,26 @@
+{
+  "id": "did:ixo:entity:abc123",
+  "type": "Carbon",
+  "name": "Mallawi Collection",
+  "tokenName": "Supa Moto",
+  "decimals": 1,
+  "description": "asdfasdfasdf",
+  "image": "https://cellnode-pandora.ixo.earth/public/5kg1ca5qc5cldemg07p",
+  "properties": {
+    "denom": "STOVE",
+    "icon": "https://cellnode-pandora.ixo.earth/public/780ex70isbldemg9r8",
+    "maxSupply": "1600",
+    "attributes": {
+      "location": "Mallawi",
+      "color": "red"
+    },
+    "metrics": [
+      {
+        "prefix": "prefix",
+        "metric": "metric",
+        "suffix": "suffix",
+        "source": "https://cellnode.com/#dfdfcv"
+      }
+    ]
+  }
+}
