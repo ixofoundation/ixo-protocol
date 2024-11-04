@@ -1,0 +1,546 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "The JSON-LD context providing semantic meaning to the properties.",
+      "const": "https://w3id.org/ixo/context",
+      "example": "https://w3id.org/ixo/context"
+    },
+    "issuer": {
+      "type": "object",
+      "description": "The entity (user or service) issuing the request message.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "User",
+            "Service"
+          ],
+          "description": "The type of issuer, either a User or a Service.",
+          "example": "User"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique DID identifier for the issuer.",
+          "example": "did:ixo:abc123"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "Visitor",
+            "Administrator",
+            "Delegate"
+          ],
+          "description": "The role of the issuer, e.g., Administrator.",
+          "example": "Administrator"
+        },
+        "account": {
+          "type": "string",
+          "description": "The ixo blockchain account address for the issuer.",
+          "example": "ixo123abc456"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "role",
+        "account"
+      ]
+    },
+    "origin": {
+      "type": "object",
+      "description": "The software component where the request originated.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ImpactsX",
+            "ImpactsXMobile",
+            "Oracle"
+          ],
+          "description": "The type of application or service from which the message originates.",
+          "example": "ImpactsX"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the origin, typically a URL or IP address if this is a web application.",
+          "example": "https://app.impacts.exchange"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "description": "The intended recipient or component where the action will be processed.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ImpactsX",
+            "ImpactsXMobile",
+            "Oracle"
+          ],
+          "description": "The type of the target, such as ImpactsX.",
+          "example": "ImpactsX"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the target application or service, typically a URL.",
+          "example": "https://app.impacts.exchange"
+        },
+        "component": {
+          "type": "string",
+          "enum": [
+            "Profile",
+            "Vault",
+            "Wallet",
+            "Canvas",
+            "Portal",
+            "Search",
+            "Console",
+            "Companion"
+          ],
+          "description": "The specific UI Component or Service within the target.",
+          "example": "Profile"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "component"
+      ]
+    },
+    "domain": {
+      "type": "object",
+      "description": "The entity domain with which the user is interacting.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Agent",
+            "DAO",
+            "Asset",
+            "Request",
+            "Offer",
+            "Proposal",
+            "Oracle",
+            "Investment",
+            "Protocol"
+          ],
+          "description": "The type of entity domain that the user as an Agent is interfacing with.",
+          "example": "Asset"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique DID identifier for the domain.",
+          "example": "did:ixo:entity:asset123"
+        }
+      },
+      "required": [
+        "type",
+        "id"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "description": "The action to be executed, which can be of various types such as Query, Authorise, Invoke, etc.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Query",
+            "Authorise",
+            "Invoke",
+            "Invite",
+            "Evaluate",
+            "Claim",
+            "Create"
+          ],
+          "description": "The type of action being executed.",
+          "example": "Query"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the action.",
+          "example": "uuid:123-abc"
+        },
+        "message": {
+          "type": "object",
+          "description": "Details about the message payload.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "GraphQL",
+                "Proto"
+              ],
+              "description": "The format of the message payload.",
+              "example": "GraphQL"
+            },
+            "id": {
+              "type": "string",
+              "description": "The identifier for the message type, e.g., proto version.",
+              "example": ".../bank/v1beta1/MsgSend"
+            },
+            "payload": {
+              "type": "string",
+              "description": "The actual content of the message.",
+              "example": "{\"query\": \"{ user { id name } }\"}"
+            },
+            "header": {
+              "type": "object",
+              "description": "Headers for the message, such as authentication tokens or content type.",
+              "properties": {
+                "Authorization": {
+                  "type": "string",
+                  "description": "Authentication token or credentials.",
+                  "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                },
+                "Content-Type": {
+                  "type": "string",
+                  "description": "The MIME type of the message payload.",
+                  "example": "application/json"
+                }
+                // Additional header fields can be defined here
+              },
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "type",
+            "id",
+            "header",
+            "payload"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "message"
+      ]
+    },
+    "service": {
+      // maps to the did document and may include the other standard properties
+      "type": "array",
+      "description": "A list of services involved in the action.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Blocksync",
+              "Matrix",
+              "Agent"
+            ],
+            "description": "The type of service, e.g. Blocksync, Matrix, or Agent.",
+            "example": "Blocksync"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the service.",
+            "example": "https://blocksync.impacts.exchange"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the service.",
+            "example": "Service used for blockchain indexing."
+          }
+        },
+        "required": [
+          "type",
+          "id"
+        ]
+      }
+    },
+    "linkedResource": {
+      "type": "array",
+      "description": "Linked resources relevant to the action being performed.",
+      "items": {
+        "type": "object",
+        // maps to the did document and may include the other standard properties
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the linked resource.",
+            "example": "This resource contains additional information about the domain."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the linked resource.",
+            "example": "Documentation"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the linked resource.",
+            "example": "{\"{ did }\"# \"{ name } \"}"
+          }
+        },
+        "required": [
+          "description",
+          "type",
+          "id"
+        ]
+      }
+    },
+    "accordedRight": {
+      "type": "array",
+      "description": "Rights accorded, such as an invitation to participate.",
+      "items": {
+        "type": "object",
+        // maps to the did document and may include the other standard properties
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Invitation"
+            ],
+            "description": "Type of right accorded.",
+            "example": "Invitation"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the right.",
+            "example": "https://<your-agoric-node>/api/invitation/agoric1ydzxwh6f893jvpaslmaz6l8j2ulup9a7x8qvvq"
+          }
+        },
+        "required": [
+          "type",
+          "id"
+        ]
+      }
+    },
+    "linkedClaim": {
+      "type": "array",
+      "description": "Claims that are linked to this message.",
+      "items": {
+        "type": "object",
+        // maps to the did document and may include the other standard properties
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the linked claim.",
+            "example": "This claim verifies the ownership of the asset."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the linked claim.",
+            "example": "OwnershipClaim"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the linked claim.",
+            "example": "claim-789"
+          }
+        },
+        "required": [
+          "description",
+          "type",
+          "id"
+        ]
+      }
+    },
+    "agent": {
+      "type": "object",
+      "description": "Details about the agent involved, such as User or Oracle.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "User",
+            "Oracle"
+          ],
+          "description": "The type of agent.",
+          "example": "Oracle"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the agent.",
+          "example": "did:ixo:entity:123"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Prompt provided to the agent.",
+          "example": "Analyze the data for anomalies."
+        },
+        "function": {
+          "type": "string",
+          "description": "The function the agent is intended to perform.",
+          "example": "DataAnalysis"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "prompt",
+        "function"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "description": "Any arbitrary payload relevant to the message.",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the data payload.",
+          "example": "Payload contains user profile details."
+        },
+        "content": {
+          "type": "string",
+          "description": "The actual content of the data.",
+          "example": "{\"name\": \"John Doe\", \"age\": 30}"
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the data.",
+          "example": "uuid:123-abc"
+        }
+      },
+      "required": [
+        "description",
+        "content",
+        "id"
+      ]
+    },
+    "proof": {
+      "type": "object",
+      "description": "Proof used to verify the authenticity of the message.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of proof.",
+          "example": "BbsBlsSignature2020"
+        },
+        "proofPurpose": {
+          "type": "string",
+          "description": "The purpose of the proof.",
+          "example": "assertionMethod"
+        },
+        "verificationMethod": {
+          "type": "string",
+          "description": "The verification method for the proof, typically a DID URL.",
+          "example": "did:ixo:1234"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the proof was created.",
+          "example": "2021-05-03T12:31:28.561945Z"
+        },
+        "proofValue": {
+          "type": "string",
+          "description": "The digital signature value.",
+          "example": "iUFtRGdLLCWxKx8VD3oiFBoRMUFKhSitTzMsfImXm6OF0d8il+Z40aLz8S7m8EcXPQhRjcWWL9jkfcf1SDifD4CvxVg69NvB7hZyIIz9hwAyi3LmTm0ez4NDRCKyieBuzqKbfM2eACWn/ilhOJBm6w=="
+        }
+      },
+      "required": [
+        "type",
+        "proofPurpose",
+        "verificationMethod",
+        "created",
+        "proofValue"
+      ]
+    },
+    "capability": {
+      "type": "object",
+      "description": "Details of the capability delegation for authorization purposes.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the capability.",
+          "example": "https://chatty.example/ben/caps#2cdea8c1"
+        },
+        "parentCapability": {
+          "type": "string",
+          "description": "The identifier for the parent capability from which this capability is derived.",
+          "example": "https://social.example/alyssa/caps#79795d78"
+        },
+        "invoker": {
+          "type": "string",
+          "description": "The entity permitted to invoke this capability.",
+          "example": "https://lem.example/#key-bf36"
+        },
+        "caveat": {
+          "type": "array",
+          "description": "Conditions or limits placed on the capability.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of caveat being applied.",
+                "example": "DriveNoMoreThan"
+              },
+              "limit": {
+                "type": "string",
+                "description": "The specific limit applied by the caveat.",
+                "example": "5 kilometers"
+              }
+            },
+            "required": [
+              "type",
+              "limit"
+            ]
+          }
+        },
+        "proof": {
+          "type": "object",
+          "description": "Proof used to verify the authenticity of the capability delegation.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The type of proof.",
+              "example": "RsaSignature2016"
+            },
+            "proofPurpose": {
+              "type": "string",
+              "description": "The purpose for which the proof is being provided.",
+              "example": "capabilityDelegation"
+            },
+            "created": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp when the proof was created.",
+              "example": "2017-06-13T19:15:03Z"
+            },
+            "creator": {
+              "type": "string",
+              "description": "The DID or URL of the key used to create the proof.",
+              "example": "https://chatty.example/ben/#key-33"
+            },
+            "signatureValue": {
+              "type": "string",
+              "description": "The digital signature value.",
+              "example": "..."
+            }
+          },
+          "required": [
+            "type",
+            "proofPurpose",
+            "created",
+            "creator",
+            "signatureValue"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "invoker",
+        "proof"
+      ]
+    }
+  },
+  "required": [
+    "@context",
+    "issuer",
+    "origin",
+    "target",
+    "domain"
+  ]
+}
