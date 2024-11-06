@@ -1,5 +1,5 @@
 # Domain Entity Data Model
-This is a technical specification of the data model for entity Domains in the IXO Spatial Web. It builds on the ]Interchain Identifiers](https://github.com/ixofoundation/ixo-protocol/blob/da94628b497879092d20133d9b8594dae22cff9a/interchain-identifiers/v1.md) Specification, a consensus standard that was pioneered by IXO and developed with support from the Interchain Foundation.
+This is a technical specification of the data model for entity Domains in the IXO Spatial Web. It builds on the [Interchain Identifiers](https://github.com/ixofoundation/ixo-protocol/blob/da94628b497879092d20133d9b8594dae22cff9a/interchain-identifiers/v1.md) Specification, a consensus standard that was pioneered by IXO and developed with support from the Interchain Foundation.
 
 In the context of the IXO Spatial Web, **Domains** refer to decentralized digital twin entities that represent both virtual and physical real-world assets. These domains are registered autonomously within blockchain digital registries and are identified by Interchain Identifiers (IIDs), a specific class of Decentralized Digital Identifiers (DIDs) designed for on-chain entities. Each domain is defined by its properties outlined in Domain (IID) Documents, which can be resolved using the IXO DID Method.
 
