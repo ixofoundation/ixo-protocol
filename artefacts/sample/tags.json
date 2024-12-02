@@ -1,0 +1,16 @@
+{
+  "@context":{
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
+    "@id": "@type",
+    "type": "@type",
+    "@protected": true
+  },
+  "type": "ixo:entity#tags",
+  "ddoTags":
+  [
+    {
+      "category": "Asset Type",
+      "tags": ["Equity", "Commercial Rights"]
+    }
+  ]
+}

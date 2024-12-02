@@ -1,0 +1,29 @@
+{
+  "@context":{
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
+    "@id": "@type",
+    "type": "@type",
+    "@protected": true
+  },
+  "type": "ixo:entity#profile",
+  "name": "Entity Name",
+  "image": "https://cellnode.storage/public/5kg1ca5qc5cldemg07p",
+  "logo": "https://cellnode.storage/public/780ex70isbldemg9r8",
+  "brand": "Brand behind the entity",
+  "location": "SA",
+  "description": "A short profile description of the entity",
+  "attributes": [
+    {
+      "key": "Model",
+      "value": "Supamoto"
+    }
+  ],
+  "metrics": [
+    {
+      "prefix": "USD",
+      "metric": "Price",
+      "suffix": "average",
+      "source": "https://example.com/dfdfcv"
+    }
+  ]
+}
