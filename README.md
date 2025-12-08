@@ -1,40 +1,140 @@
 # IXO Protocol
 
-Welcome to the IXO Protocol repository! This repository provides the technical specifications, semantic definitions, and sample artifacts for creating decentralized digital domains using the IXO Spatial Web Platform. The IXO Protocol is a versatile toolset designed to enable trusted, verifiable interactions and data management for any type of digital entity, including non-fungible tokens (NFTs), fungible tokens, tokenized namespace records, and other Spatial Web entities.
+IXO Protocol is the specification layer for the IXO Spatial Web and Impact Hub blockchain. It defines the data models, semantics, and coordination rules that let people, organisations, AI agents, and devices cooperate intelligently over shared state.
 
-## Table of Contents
+This repository contains the technical specifications, semantic definitions, and sample artifacts for creating decentralised digital domains and Cognitive Digital Twins on the IXO stack.
+
+---
+
+## Table of contents
 
 - [Overview](#overview)
-- [Features](#features)
+- [Design goals](#design-goals)
+- [What this repository contains](#what-this-repository-contains)
+- [Getting started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
 
+---
+
 ## Overview
 
-The IXO Protocol is at the core of building a decentralized Spatial Web, a new generation of the internet designed for verifiable interactions with digital entities. Using blockchain technology, the IXO Spatial Web Platform provides the technical foundation for identifying, managing, and interacting with digital twin representations of both tangible and abstract entities. These entities can range from real-world physical objects to complex cognitive digital twin systems, all integrated into a unified, verifiable framework.
+IXO Protocol sits at the core of the Spatial Web: a network of digital domains where every relevant entity has a verifiable, programmable representation.
 
-The IXO Spatial Web Platform enables seamless interaction between decentralized applications, agents, and digital twins, establishing trust and data integrity across digital domains.
+Using the Impact Hub blockchain and IXO’s data layer, the protocol describes how to:
 
-## Features
+- Identify entities (people, organisations, devices, assets, agents, domains).
+- Represent them as digital twins and namespaces with clear semantics.
+- Express rights, claims, and state transitions as verifiable records.
+- Coordinate workflows and governance across on-chain and off-chain systems.
 
-- **Decentralized Digital Domains**: Establishes unique, identifiable namespaces for all types of digital entities, including digital twins of real-world and virtual entities.
-- **Verifiable Records**: Ensures trusted, immutable records for any type of interaction or transaction involving Spatial Web entities.
-- **Interoperable Standards**: Leverages existing Web (W3C, IETF) and blockchain protocols for compatibility across various networks, enhancing interoperability within the decentralized Web 3.0 ecosystem.
-- **Smart Contracts and Executable Workflows**: Facilitates programmable, verifiable workflows for managing Spatial Web entities, making the platform adaptable to a wide range of use cases.
+Entities can represent anything from physical infrastructure (for example a solar array), to logical systems (for example a data pipeline), to Cognitive Digital Twins that encapsulate models, policies, and AI behaviour.
+
+The result is a unified framework for building applications where interactions are:
+
+- Verifiable: backed by immutable, cryptographically secured records.
+- Accountable: linked to explicit authorisation and intent.
+- Interoperable: based on open web and blockchain standards.
+
+---
+
+## Design goals
+
+IXO Protocol is designed to support intelligent cooperation at internet scale. Key goals:
+
+- **Digital domains as first-class citizens**  
+  Model domains (projects, pods, registries, marketplaces, platforms) as typed namespaces that can hold entities, rights, and rules.
+
+- **Cognitive Digital Twins**  
+  Represent real-world systems and AI-powered twins with the same abstraction, so that models, policies, and data are governed together.
+
+- **Verifiable interactions**  
+  Encode actions as claims, transactions, and events that can be independently verified, audited, and replayed.
+
+- **Interoperable semantics**  
+  Build on existing standards (for example W3C DIDs and VCs, JSON-LD, IETF identifiers, IBC and Cosmos-SDK conventions) to integrate with other Web3 and Web 2.0 systems.
+
+- **Programmable workflows**  
+  Align with smart contracts and flow engines (for example IXO Flows / Qi) to turn protocol definitions into executable, testable workflows.
+
+---
+
+## What this repository contains
+
+This repository is the canonical reference for the IXO Protocol. Typical contents include:
+
+- **Core specifications**  
+  Formal definitions of entities, domains, identifiers, claims, tokens, and smart accounts in the IXO ecosystem.
+
+- **Semantic models**  
+  Ontologies, JSON-LD contexts, and type definitions for common Spatial Web entities and relationships.
+
+- **Interaction patterns**  
+  Reference flows for onboarding, issuing and evaluating claims, managing digital rights, and coordinating agent actions.
+
+- **Sample artifacts**  
+  Example domain definitions, entity schemas, and configuration files that can be used as starting points for new deployments.
+
+- **Implementation notes**  
+  Guidance on how the protocol maps to concrete implementations in:
+  - Impact Hub (Cosmos SDK modules and CosmWasm contracts)
+  - IXO SDKs and services
+  - Off-chain data and messaging layers (for example Matrix, CRDT documents)
+
+Exact structure and filenames may evolve over time; refer to the repository root and subdirectories for the most up-to-date layout.
+
+---
+
+## Getting started
+
+This repository is specification-first. To use IXO Protocol in an application or deployment, you will typically:
+
+1. **Read the core specs**  
+   Start with the high-level documents that define domains, entities, claims, and tokens. These describe the building blocks you compose.
+
+2. **Pick your implementation layer**  
+   - For blockchain and contract work, see the Impact Hub / `ixo-blockchain` and `ixo-contracts` repositories.  
+   - For application development, use the TypeScript SDKs (for example `@ixo/impactxclient-sdk`, `@ixo/matrixclient-sdk`, `@ixo/signx-sdk`).
+
+3. **Model your domain**  
+   Define the digital domains, entities, and workflows your application needs, using the patterns and example schemas in this repository.
+
+4. **Link to execution**  
+   Implement the corresponding smart contracts, flows, or services that realise your protocol definitions on Impact Hub and your data layer.
+
+5. **Test and iterate**  
+   Use testnets and devnets to verify that your protocol definitions behave as expected in real flows with real agents (human and AI).
+
+For concrete implementation examples, refer to the documentation and example projects linked from the main IXO organisation README and docs site.
+
+---
 
 ## Contributing
 
-We welcome contributions from the community! To contribute:
+Contributions that improve clarity, correctness, and coverage of the protocol are welcome.
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature/YourFeature`).
-6. Open a Pull Request.
+To contribute:
 
-For more details, please check our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+1. Fork this repository.
+2. Create a new branch:  
+   `git checkout -b feature/your-feature-name`
+3. Make and document your changes.
+4. Ensure any referenced diagrams, schemas, and examples stay consistent.
+5. Commit:  
+   `git commit -m "Describe your change"`
+6. Push:  
+   `git push origin feature/your-feature-name`
+7. Open a Pull Request explaining:
+   - The problem or gap you are addressing.
+   - The scope and impact of your changes.
+   - Any migration or compatibility considerations.
+
+For more details, see `CONTRIBUTING.md` if present in this repository, or follow the contribution practices used across the IXO organisation.
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the `LICENSE` file in this repository for the full text.
+
+If you are using IXO Protocol in production, especially in regulated or safety-critical environments, ensure your legal and compliance teams review how the specifications and any derived code are applied in your context.
