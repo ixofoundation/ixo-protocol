@@ -1,0 +1,24 @@
+{
+  "@context":{
+    "ixo":"https://w3id.org/ixo/ns/protocol/",
+    "@id": "@type",
+    "type": "@type",
+    "@protected": true
+  },
+  "type": "ixo:entity#claim",
+  "entityClaims":[
+    {
+      "template": {
+        "id":"did:ixo:entity:abc123",
+        "title": "Claim Title",
+        "description": "This is a description of the Claim."
+      },
+      "submissions":{
+        "maximum": 100,
+        "startDate":"20-Jan-2023",
+        "endDate":"22-Feb-2023"
+      }
+    }
+    ],
+   "headlineMetric":"did:ixo:entity:abc123",
+  }
