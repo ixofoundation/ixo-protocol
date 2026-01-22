@@ -8,65 +8,42 @@
       "properties": {
         "id": {
           "type": "string",
-          "default": "https:w3id.org/ixo/ns/entities/",  
-          "examples": [
-          "https:w3id.org/ixo/ns/entities#Impact_Token"
-          ]
+          "default": "https:w3id.org/ixo/ns/entities/",
+          "examples": ["https:w3id.org/ixo/ns/entities#Impact_Token"]
         },
         "@type": {
           "type": "string",
-          "examples": [
-          "Impact Token"
-          ]
+          "examples": ["Impact Token"]
         },
         "name": {
           "type": "string",
           "default": "Entity Name",
-          "examples": [
-            "Awesome Impact Asset"
-          ]
+          "examples": ["Awesome Impact Asset"]
         },
         "description": {
           "type": "string",
           "default": "Short description of the Entity",
-          "examples": [
-            "This asset "
-          ]
+          "examples": ["This asset "]
         },
         "image": {
           "type": "string",
           "default": "https://web3.storage/",
-          "examples": [
-            "https://cellnode.ixo.world/public/sbujb0xg0dgkeljwtnc"
-          ]
-        },
-        "imageDescription": {
-          "type": "string",
-          "default": "Hero Image",
-          "examples": [
-            "Profile Header Image"
-          ]
+          "examples": ["https://cellnode.ixo.world/public/sbujb0xg0dgkeljwtnc"]
         },
         "logo": {
           "type": "string",
           "default": "",
-          "examples": [
-            "https://cellnode.ixo.world/public/xxxjb0xg0dgkeljwtnc"
-          ]
+          "examples": ["https://cellnode.ixo.world/public/xxxjb0xg0dgkeljwtnc"]
         },
         "brand": {
           "type": "string",
           "default": "Organisation",
-          "examples": [
-            "ixo Foundation"
-          ]
+          "examples": ["ixo Foundation"]
         },
         "location": {
           "type": "string",
           "default": "GLOBAL",
-          "examples": [
-            "AR"
-          ]
+          "examples": ["AR"]
         },
         "attributes": {
           "type": "array",
@@ -75,21 +52,14 @@
             "properties": {
               "key": {
                 "type": "string",
-                "examples": [
-                  "Model"
-                ]
+                "examples": ["Model"]
               },
-             "value": {
+              "value": {
                 "type": "string",
-                "examples": [
-                  "ABC123"
-                ]
-              },
+                "examples": ["ABC123"]
+              }
             },
-            "required": [
-              "key",
-              "value"
-            ],
+            "required": ["key", "value"],
             "additionalProperties": false
           }
         },
@@ -110,17 +80,10 @@
               "source": {
                 "type": "string",
                 "default": "www.example.com",
-                "examples": [
-                  "www.example.com"
-                ]
+                "examples": ["www.example.com"]
               }
             },
-            "required": [
-              "prefix",
-              "metric",
-              "suffix",
-              "source"
-            ],
+            "required": ["prefix", "metric", "suffix", "source"],
             "additionalProperties": false
           }
         }
@@ -131,7 +94,6 @@
         "name",
         "description",
         "image",
-        "imageDescription",
         "logo",
         "brand",
         "location",
@@ -141,8 +103,6 @@
       "additionalProperties": false
     }
   },
-  "required": [
-    "profile"
-  ],
+  "required": ["profile"],
   "additionalProperties": false
 }
